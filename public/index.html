@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="board">
+            <div v-show="fusionBackdrop" @click="fusionImage()" class="bigImageWrapper">
+                <image class="blownUpDrawings" v-show="fusionShowHydro" src="IMGS/hydrodip.png"></image>
+                <image class="blownUpDrawings" v-show="fusionShowSwitch" src="IMGS/switchMount.png"></image>
+            </div>
+            <!-- Schooling -->
+            <div class="schooling">
+                <h2>Education:</h2>
+                <p class="enrolled">Currently Enrolled:</p>
+                <a href="https://utahtech.edu/"><transition name="ut"></transition><image class="UT" src="IMGS/UT.png"></image></transition></a>
+                <div class="UTU"></div>
+                <div class="codeschool">
+                    <h3>Recent Achievments:</h3>
+                    <h4>UTU's Summer of 2023 CodeSchool</h4>
+                </div>
+                <h3 class="prior">Prior Education:</h3>
+                <ul>
+                    <li>High School Diploma:<span>Desert Hills High School</span><span>Year: 2018</span></spabn><a href="https://dhthunder.org/"><image class="DH" src="IMGS/DH.png"></image></a></li>
+                    <li>Dixie Technical College<a href="https://dixietech.edu/"><image class="DT" src="IMGS/DixieTech.png"></image></a><span>- CNC Machining Certified</span><span>- Fusion 360 specialist</span><span>- Solidworks Certified Associate</span></li>
+                </ul>
+            </div>
+            <!-- Name and title -->
+            <div class="header">
+                <h1>Brandon P. Lewis</h1>
+                <p>Software Engineer</p>
+            </div>
+            <!-- Contact Information and -->
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/brandplewis/">
+                    <div class="shadow">   
+                        <div class="infoButton linkedin"></div>         
+                    </div>
+                </a>
+                <a href="https://github.com/BranPLewis">
+                    <div class="shadow">
+                        <div class="infoButton github"></div>            
+                    </div>
+                </a>
+                <div class="shadow">                
+                    <div class="infoButton myInfo" @mouseover="infoHover = true" @mouseleave="infoHover = false"><p>@</p></div>
+                </div>
+            </div>
+            <transition name="fade-in">
+                <div class="generalInfo" v-show="infoHover" @mouseover="infoHover = true" @mouseleave="infoHover = false">
+                    <h2>Email</h2>
+                    <h4>Brandude99@gmail.com</h4>
+                    <h2>Phone #</h2>
+                    <h4>(435)-862-8734</h4>
+                </div>
+            </transition>
+            <!-- Prior Work experience -->
+            <div class="workHistoryExtended">
+                <div class="murph">
+                    <h3>Papa Murphy's Take and Bake</h3><span>Sep 2022 - Current</span><span><t class="standout">Title:</t> Day Manager</span><span class="standout">Job Description:</span><p>- First one in, oversee all tasks necessary to prepare the store for the day. Keep all employees thereafter aware of thier tasks required before the night is through. Observe and maintain a safe, friendly, and healthy environment.</p>
+                </div>
+            </div>
+            <div class="workHistory">
+                <h2 class="workTitle">Work History:</h2>
+                <ul class="worklist">
+                    <li class="workBorder"><h3>Alphaeus Manufacturing</h3><span>July 2021 - December 2021</span><span><t class="standout">Title:</t> Machinist</span><span class="standout">Job Description:</span><span>- Knowledge of Haas controller, ability to navigate/control/adapt to different CNC Milling Machines.</span><span>- Set up the Haas Mills, to allow for easy repetetive part production.</span></li>
+                    <li><h3>Vudoo Gunworks</h3><span>May 2019 - June 2020</span><span><t class="standout">Title:</t> Paint prep Associate</span><span class="standout">Job Description:</span><span>- See that all barrels & parts in need of Cerakote get Acetone bathed, sandblasted, and inspected to insure a smooth and lasting paint job.</span></li>
+                </ul>
+            </div>
+            <div class="skills">
+                <h2>Skills:</h2>
+                <ul class="skillsCenter">
+                    <li>Computers/IT</li>
+                    <li>Operating Systems<br>Mac/Windows</li>
+                    <li>CNC Machining</li>
+                    <li>3D Modeling/Fusion 360</li>
+                    <li>Software Development</li>
+                    <h4>Languages:</h4>
+                    <ul class="skillsLeftMargin">
+                        <li>Python</li>
+                        <li>Javascript/Vue.js</li>
+                    </ul>
+                    <h4>Markup:</h4>
+                    <ul class="skillsLeftMargin">
+                        <li>HTML 5</li>
+                        <li>CSS(Cascading Style Sheets)</li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="connector"></div>
+            <div class="hobbies">
+                <h2>Hobbies:</h2>
+                <ul class="hobbiesCenter">
+                    <li>Building Desktops/<br>Dedicated Servers</li>
+                    <li>3D printing/machining<br> toys, games, game pieces, tools, equipment, etc...</li>
+                    <li>Arduinoing (Playing with Electronics)</li>
+                    <li>Pickleball/Tennis</li>
+                    <li>Making 8-Bit games from<br> scratch in a plethra of<br> Programming Languages</li>
+                        <h4>Games:</h4>
+                        <ul class="hobbiesLeftMargin">
+                            <li>Minesweeper in Javascript</li>
+                            <li>Frogger in Python(pygame)</li>
+                        </ul>
+                </ul>
+            </div>
+            <div class="projects">
+                <h2>Projects:</h2>
+                <h4>Fusion Drawings:</h4>
+                <image @click="showFusionHydro()" class="fusionDrawings" src="IMGS/hydrodip.png"></image>
+                <image @click="showFusionSwitch()" class="fusionDrawings" src="IMGS/switchMount.png"></image>
+            </div>
+            <div class="projectsExt">
+                <h4>Web Apps:</h4>
+                <a href="https://sweepable.up.railway.app/"><image src="IMGS/sweepableLogo.png" class="sweepable"></image></a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

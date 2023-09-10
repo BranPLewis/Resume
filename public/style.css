@@ -1,0 +1,562 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+@font-face {
+    font-family:"Proxima";
+    src: url("fonts/Proxima_nova/proxima_nova_semibold.otf");
+}
+
+@font-face {
+    font-family:"Revamped";
+    src: url("fonts/Revamped.ttf");
+}
+
+@font-face {
+    font-family:"Casanova";
+    src: url("fonts/Casanova.ttf");
+}
+
+@font-face {
+    font-family:"FallingSky";
+    src: url("fonts/FallingSky.otf");
+}
+
+body {
+    background-color:rgb(74,140,150);
+}
+
+.board {
+    display:grid;
+    grid-template-columns: repeat(5,20%);
+    grid-template-rows: repeat(4,24.65vh);
+}
+
+.header {
+    grid-column:2/5;
+    grid-row:1/2;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
+    font-family: Arial;
+    font-weight: bold;
+    color:white;
+    text-shadow: -4px 4px 4px black;
+    -webkit-text-stroke: 2px #070504;
+    background-color:#53b083;
+    border-radius:12px;
+    box-shadow: -10px 10px 4px -2px black;
+    margin:10px 10px 0px 10px;
+}
+
+.schooling {
+    grid-column:1/2;
+    grid-row: 1/6;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    border-radius:12px;
+    box-shadow: -10px 6px 4px -2px;
+    background-color:rgb(61, 252, 255);
+    margin:10px;
+    font-family:FallingSky;
+    font-weight:bold;
+}
+
+.school-status {
+    font-size:16px;
+    margin-top:8px;
+}
+
+.schooling h2 {
+    border-bottom:1px solid black;
+    width:14rem;
+    text-align:center;
+    padding-bottom:5px;
+}
+
+.enrolled {
+    text-align:center;
+    font-weight:bold;
+    font-family:FallingSky;
+    font-size:20px;
+    border-bottom: 1px solid black;
+    width:15rem;
+    padding:6px 0px 10px 0px;
+}
+
+.schooling h3 {
+    border-bottom: 1px solid black;
+    text-align:center;
+    width:220px;
+    padding:12px 0px 6px 0px;
+}
+
+.schooling ul li {
+    margin-top:1px;
+    width:220px;
+    border-bottom:1px solid black;
+    border-top:1px solid black;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    padding: 4px 0px 4px 0px;
+}
+
+.border-fix {
+    border-top:1px solid black;
+    margin-top:1px;
+}
+
+.prior {
+    font-size:24px;
+    color:rgb(0, 0, 0);
+    margin-top:1px;
+}
+
+.classProgress {
+    font-size:25px;
+    -webkit-text-stroke: .2px #2c2c2c;
+    color:rgb(210, 18, 0);
+}
+
+.schooling h2 {
+    margin-top:6px;
+    color: rgb(0, 0, 0);
+    font-family: arial;
+    font-size:38px;
+}
+
+.UT {
+    margin-top:1rem;
+    height:10rem;
+    border-bottom: 1px solid black;
+    padding-bottom:1rem;
+    transition-property: background;
+    transition-duration: .25s;
+    transition-timing-function: linear;
+}
+
+.UT:hover {
+    padding-left:6px;
+    padding-right:6px;
+    border-radius:20px;
+    background-color:rgba(255, 0, 0, 0.444);
+}
+
+.workExp {
+    grid-column:5/6;
+    grid-row: 2/6;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    border-radius:12px;
+    box-shadow: -10px 6px 4px -2px;
+    background-color:rgb(17, 167, 162);
+    margin:10px;
+}
+
+.workHistory {
+    grid-column: 2/3;
+    grid-row:2/6;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    background-color:#ffbb33;
+    margin:10px;
+    border-radius:12px 12px 0px 12px;
+    box-shadow: -10px 6px 4px -2px;
+}
+
+.workHistoryExtended {
+    grid-column: 2/4;
+    grid-row:4/5;
+    background-color:#ffbb33;
+    margin:0px 10px 10px 100px;
+    border-radius:0px 12px 12px 0px;
+    box-shadow: 4px 6px 4px -2px;
+}
+
+.murph {
+    margin:8px 12px 0px 11.5rem;
+    border-left:1px solid black;
+    padding-left:12px;
+    display:flex;
+    flex-flow:column wrap;
+    align-items:center;
+    text-align:center;
+    gap:4px;
+    font-family:arial;
+}
+
+.murph p {
+    font-size:12px;
+}
+
+.workBorder {
+    border-bottom:1px solid black;
+}
+
+.worklist li {
+    display:flex;
+    flex-flow:column wrap;
+    align-items:center;
+    gap:4px;
+    text-align:center;
+    margin:30px 4px 0px 4px;
+    padding-bottom:30px;
+    font-family:arial;
+    width:15rem;
+}
+
+.murph h3 {
+    font-size:16px;
+    font-family:arial;
+    border-bottom:1px solid black;
+    margin-bottom:4px;
+}
+
+.worklist h3 {
+    border-bottom:1px solid black;
+}
+
+.workTitle {
+    width:15rem;
+    -webkit-text-stroke: .25px #e3e3e3;
+    text-align:center;
+    margin:8px 0px 4px 0px;
+    padding-bottom:6px;
+    font-family:arial;
+    font-size:30px;
+    border-bottom:1px solid black;
+}
+
+.standout {
+    font-weight:bold;
+    font-style:italic;
+}
+
+.contact {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:center;
+    grid-column:3/4;
+    grid-row:2/3;
+    background-color:#53b083;
+    margin: 0px 10px 10px 10px;
+    box-shadow: -10px 6px 6px -2px black;
+    border-radius:0px 0px 12px 12px;
+}
+
+.shadow {
+    margin:0px 20px 0px 20px;
+    height:5.4rem;
+    width:5.4rem;
+    border-radius:2.7rem;
+}
+
+.shadow:hover {
+    box-shadow: -4px 4px 4px -2px black;
+}
+
+.infoButton {
+    height:5.4rem;
+    width:5.4rem;
+    border-radius:2.7rem;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    -ms-transition: -ms-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+.infoButton:hover {
+    text-decoration:none;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+}
+
+.linkedin {
+    background-color:rgb(99, 255, 195);
+    background-image:url("IMGS/linkedin.png");
+    background-size:3.2rem;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.github {
+    background-color:rgb(255, 63, 63);
+    background-image:url("IMGS/github.png");
+    background-size:3.6rem;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.IN {
+    background-image:url("IMGS/linkedin.png");
+    height:3rem;
+    width:3.4rem;
+}
+
+.git {
+    background-image:url("IMGS/github.png");
+    background-size:20px;
+    height:3.6rem;
+    width:3.6rem;
+}
+
+.myInfo {
+    display:flex;
+    flex-flow:row;
+    justify-content:center;
+    background-color:rgb(105, 59, 255);
+}
+
+.myInfo p {
+    text-align:center;
+    margin-top:-8px;
+    font-weight:bold;
+    font-size:70px;
+    font-family:FallingSky;
+}
+
+.generalInfo {
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    background-color:rgb(105, 59, 255);
+    grid-column:3/4;
+    grid-row:3/4;
+    border-radius:8px;
+    box-shadow: -10px 6px 6px -2px black;
+    margin:0px 12px 12px 12px;
+}
+
+.generalInfo h2{
+    border-bottom:1px solid black;
+    width:14rem;
+    text-align:center;
+    margin:12px 0px 4px 0px;
+    font-family:arial;
+}
+
+.generalInfo h4 {
+    padding: 8px 0px 8px 0px;
+    font-size:16px;
+    font-family:arial;
+    border-bottom:1px solid black;
+    width:14rem;
+    text-align:center;
+}
+
+.hobbies,
+.skills {
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    grid-column:5/6;
+    grid-row:1/3;
+    background-color:#ff3a3a;
+    margin:12px 12px 0px 10px;
+    border-radius: 12px 12px 12px 0px;
+    box-shadow: -10px 6px 6px -2px black;
+    font-family:arial;
+    font-size:20px;
+    color:rgb(27, 27, 27);
+}
+
+.projects h2 {
+    font-size:28px;
+    margin-top:8px;
+    border-bottom:1px solid black;
+    width:14rem;
+    text-align:center;
+    padding-bottom:5px;
+}
+.hobbies h2,
+.skills h2 {
+    font-size:28px;
+    margin-top:8px;
+    border-bottom:1px solid black;
+    width:14rem;
+    text-align:center;
+    padding-bottom:5px;
+}
+
+.hobbies li,
+.skills li {
+    margin-top:6px;
+    font-family:arial;
+    font-size:16px;
+}
+
+.hobbiesCenter {
+    margin:10px 0px 0px 3.2rem;
+}
+
+.skillsCenter {
+    margin:10px 0px 0px 3.6rem;
+}
+
+.hobbies h4,
+.skills h4 {
+    margin:4px 0px 4px 12px;
+}
+
+
+.hobbiesLeftMargin{
+    margin-left:.6rem
+}
+
+.skillsLeftMargin {
+    margin-left:2rem;
+}
+
+.connector {
+    grid-column:4/6;
+    grid-row:2/3;
+    background-color:rgb(255, 58, 58);
+    margin:12px 17.7rem 0px 100px;
+    border-radius: 12px 0px 0px 12px;
+    box-shadow: -10px 6px 6px -2px black;
+}
+
+.hobbies {
+    grid-column:4/5;
+    grid-row:2/4;
+    background-color:rgb(255, 58, 58);
+    margin:12px 12px 12px 10px;
+    border-radius:12px;
+    box-shadow: -10px 6px 6px -2px black;
+}
+
+.projects {
+    background-color:rgb(255, 112, 248);
+    grid-column:5/6;
+    grid-row:3/5;
+    display:flex;
+    flex-flow: column;
+    align-items:center;
+    margin:12px;
+    box-shadow: -10px 6px 6px -2px black;
+    border-radius:12px 12px 12px 0px;
+    font-family:arial;
+}
+
+.projects h4{
+    border-bottom:1px solid black;
+    width:10rem;
+    text-align:center;
+    margin-top:8px;
+}
+
+.fusionDrawings {
+    margin-top:10px;
+    height:8rem;
+    border:1px solid black;
+}
+
+.fusionDrawings:hover {
+    box-shadow: -4px 4px 4px -2px black;
+    cursor:pointer;
+}
+
+.fade-in-enter-active {
+    transition: opacity .2s ease;
+}
+
+.fade-in-leave-active {
+    transition: opacity 1s ease;
+    transition-delay:5s;
+}
+
+.fade-in-enter-from,
+.fade-in-leave-to {
+    opacity: 0;
+}
+
+.DT,
+.DH {
+    height:5rem;
+    transition-property: background;
+    transition-duration: .25s;
+    transition-timing-function: linear;
+}
+
+.DH:hover,
+.DT:hover {
+    padding-left:6px;
+    padding-right:6px;
+    border-radius:20px;
+    background-color:rgba(255, 0, 0, 0.502);
+}
+
+.codeschool h3 {
+    width:15.2rem;
+}
+
+.codeschool h4 {
+    margin-top:10px;
+    padding-bottom:10px;
+    border-bottom:1px solid black;
+}
+
+.computer {
+    height:10rem;
+    border:2px solid black;
+}
+
+.blownUpDrawings {
+    position:absolute;
+    z-index:0;
+    height:90vh;
+}
+
+.bigImageWrapper {
+    position:absolute;
+    display:flex;
+    flex-flow:row;
+    justify-content:center;
+    align-items:center;
+    backdrop-filter: blur(16px);
+    height:100vh;
+    width:100%;
+    z-index:0;
+}
+
+.projectsExt{
+    grid-column:4/6;
+    grid-row:4/5;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    background-color:rgb(255, 112, 248);
+    margin:12px 17.6rem 12px 12px;
+    box-shadow: -10px 6px 6px -2px black;
+    border-radius:12px 0px 0px 12px;
+}
+
+.projectsExt h4{
+    font-size:24px;
+    border-bottom:1px solid black;
+    width:10rem;
+    text-align:center;
+    margin:8px 0px 12px 0px;
+}
+
+.sweepable {
+    height:50px;
+    border:1px solid black;
+}
+
+.sweepable:hover {
+    box-shadow: -4px 4px 4px -2px black;
+    cursor:pointer;
+}
+
+.smallen {
+    font-size:12px;
+}
